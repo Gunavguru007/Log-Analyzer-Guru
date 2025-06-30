@@ -1,0 +1,30 @@
+Specific Version Pinning: Uses >= to ensure minimum versions while allowing compatibility with newer versions
+Core Dependencies: Includes all necessary packages for both CLI and Streamlit interfaces
+Analysis Tools: Includes scikit-learn for potential machine learning enhancements
+Image Processing: Pillow for image handling in reports
+
+Recommended Installation:
+
+Create a virtual environment:
+
+bash
+
+python -m venv venv
+source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+
+Install requirements:
+
+bash
+
+pip install -r requirements.txt
+
+Optional Additional Packages:
+
+If you want to include PDF report generation with pdfkit, add:
+text
+
+pdfkit>=1.0.0
+
+Note: pdfkit requires wkhtmltopdf to be installed on your system separately.
+
+The versions specified are current as of mid-2024 and provide a good balance between stability and access to modern features.
