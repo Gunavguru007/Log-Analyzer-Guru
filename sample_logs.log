@@ -1,0 +1,23 @@
+# Sample log file for log_analyzer.py
+# XR Log Format Examples
+0x7F8B3C[ts:1625097600]|EVNT:XR-LOG!@OPN_usr:admin=>session_started
+0x7F8B3D[ts:1625097605]|EVNT:XR-FILE!@MOD_usr:admin=>/etc/config.conf
+0x7F8B3E[ts:1625097610]|EVNT:XR-CONN!@IP_usr:admin=>192.168.1.100
+0x7F8B3F[ts:1625097615]|EVNT:XR-SHDW!@KILL_proc:usr:admin=>process_id=4456
+0x7F8B40[ts:1625097620]|EVNT:XR-EXEC!@RUN_usr:admin=>/usr/bin/backup.sh
+
+# Generic System Log Examples
+2023-06-30 08:45:12 user=admin action=login status=success ip=192.168.1.100
+2023-06-30 08:46:23 user=admin action=file_modification target=/etc/passwd
+2023-06-30 08:47:34 user=admin action=process_kill pid=4456
+2023-06-30 08:48:45 user=admin action=connection ip=203.0.113.42 port=443
+2023-06-30 08:49:56 user=admin action=login_failed reason=wrong_password
+
+# Security Event Examples
+2023-06-30 09:00:00 [SECURITY] Failed login attempts (5) from user: intruder
+2023-06-30 09:01:15 [WARNING] Sensitive file accessed: /etc/shadow by user: admin
+2023-06-30 09:02:30 [ALERT] Port scan detected from IP: 198.51.100.17
+
+# Malformed/Error Examples (for testing error handling)
+!!MALFORMED!! This line should be skipped by the parser
+2023-06-30 09:03:45 [ERROR] This is a malformed log entry missing critical fields
